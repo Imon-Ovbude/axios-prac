@@ -1,15 +1,33 @@
 import React from 'react';
 import './App.css';
-import Header from './cpmponents/Header';
-import AddContact from './cpmponents/AddContact';
-import ContactList from './cpmponents/ContactList';
+import Header from './components/Header';
+import AddContact from './components/AddContact';
+import ContactList from './components/ContactList';
 
 function App() {
+  const contacts = [
+    {
+      id: '1',
+      name: 'Billy',
+      email: 'billy@xyz.com',
+    },
+    {
+      id: '2',
+      name: 'Bob',
+      email: 'bob@xyz.com',
+    },
+    {
+      id: '3',
+      name: 'Thorton',
+      email: 'thorton@xyz.com',
+    },
+  ];
+
   return (
-    <div>
+    <div className='ui container'>
       <Header />
       <AddContact />
-      <ContactList />
+      <ContactList contacts={contacts} />
     </div>
   );
 }
