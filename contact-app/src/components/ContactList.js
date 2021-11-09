@@ -2,10 +2,20 @@ import React from 'react';
 import ContactCard from './ContactCard';
 
 const ContactList = props => {
-  const { contacts } = props;
+  const { contacts, getContactId } = props;
 
-  const renderContactList = contacts.map((contact, id) => {
-    return <ContactCard key={id} contact={contact} />;
+  const deleteContactHandler = id => {
+    getContactId(id);
+  };
+
+  const renderContactList = contacts.map(contact => {
+    return (
+      <ContactCard
+        key={contact.id}
+        contact={contact}
+        clickHandler={deleteContactHandler}
+      />
+    );
   });
 
   return (
