@@ -14,11 +14,22 @@ class AddContact extends Component {
     });
   };
 
+  handleSubmit = e => {
+    e.preventDefault();
+
+    if (this.state.name === '' || this.state.email === '') {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    console.log(this.state);
+  };
+
   render() {
     return (
       <div className='ui main'>
         <h2>Add Contact</h2>
-        <form action='' className='ui form'>
+        <form action='' className='ui form' onSubmit={this.handleSubmit}>
           <div className='field'>
             <label htmlFor='name'>Name</label>
             <input
@@ -33,9 +44,9 @@ class AddContact extends Component {
           <div className='field'>
             <label htmlFor='name'>Email</label>
             <input
-              type='text'
-              name='name'
-              id='name'
+              type='email'
+              name='email'
+              id='email'
               placeholder='Email'
               value={this.state.email}
               onChange={this.handleChange}
