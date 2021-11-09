@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 
 class AddContact extends Component {
-  state = {
-    name: '',
-    email: '',
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: '',
+      email: '',
+    };
+  }
 
   handleChange = e => {
     const { name, value } = e.target;
@@ -22,7 +26,11 @@ class AddContact extends Component {
       return;
     }
 
-    console.log(this.state);
+    this.props.addContactHandler(this.state);
+    this.setState({
+      name: '',
+      email: '',
+    });
   };
 
   render() {
