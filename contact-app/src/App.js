@@ -37,9 +37,20 @@ const App = () => {
 
   return (
     <div className='ui container'>
-      <Header />
-      <AddContact addContactHandler={addContactHandler} />
-      <ContactList contacts={contacts} getContactId={removeContactHandler} />
+      <Router>
+        <Header />
+        <Switch>
+          <Route
+            path='/add'
+            exact
+            render={props => <AddContact {...addContactHandler} />}
+          />
+          <Route path='/' component={ContactList} />
+        </Switch>
+
+        {/* <AddContact addContactHandler={addContactHandler} /> */}
+        {/* <ContactList contacts={contacts} getContactId={removeContactHandler} /> */}
+      </Router>
     </div>
   );
 };

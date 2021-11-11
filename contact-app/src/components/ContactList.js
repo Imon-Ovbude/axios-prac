@@ -2,11 +2,20 @@ import React from 'react';
 import ContactCard from './ContactCard';
 
 const ContactList = props => {
-  const { contacts, getContactId } = props;
+  // const { contacts, getContactId } = props;
+  const { getContactId } = props;
 
   const deleteContactHandler = id => {
     getContactId(id);
   };
+
+  const contacts = [
+    {
+      id: '1',
+      name: 'mike lawry',
+      email: 'mikelawry@player.com',
+    },
+  ];
 
   const renderContactList = contacts.map(contact => {
     return (
@@ -19,9 +28,11 @@ const ContactList = props => {
   });
 
   return (
-    <div className='ui celled list'>
-      <h2>Contact List</h2>
-      {renderContactList}
+    <div className='contact-list-main'>
+      <div className='ui celled list'>
+        <h2 className='ui header'>Contact List</h2>
+        {renderContactList}
+      </div>
     </div>
   );
 };
