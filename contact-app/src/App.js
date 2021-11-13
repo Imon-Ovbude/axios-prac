@@ -40,12 +40,11 @@ const App = () => {
       <Router>
         <Header />
         <Switch>
+          <Route path='/' exact component={ContactList} />
           <Route
             path='/add'
-            exact
             render={props => <AddContact {...addContactHandler} />}
           />
-          <Route path='/' component={ContactList} />
         </Switch>
 
         {/* <AddContact addContactHandler={addContactHandler} /> */}
