@@ -37,6 +37,12 @@
   }
 }
 
-.contact-list-main {
+.contact-list-main,
+.contact-detail-main {
   margin-top: 50px;
+}
+
+.center-div {
+  display: flex;
+  justify-content: center;
 }

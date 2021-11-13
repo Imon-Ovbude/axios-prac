@@ -31,6 +31,8 @@ class AddContact extends Component {
       name: '',
       email: '',
     });
+
+    this.props.history.push('/');
   };
 
   render() {
